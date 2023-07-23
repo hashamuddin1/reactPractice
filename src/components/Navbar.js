@@ -1,5 +1,6 @@
 import React from "react";
 import "../App.css";
+import PropTypes from "prop-types";
 
 export default function Navbar(props) {
   return (
@@ -21,7 +22,7 @@ export default function Navbar(props) {
         </button>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0 ">
-            <li classNameName="nav-item ">
+            <li className="nav-item ">
               <a
                 className="nav-link active nav-text"
                 aria-current="page"
@@ -41,3 +42,11 @@ export default function Navbar(props) {
     </nav>
   );
 }
+
+Navbar.propTypes = {
+  title: PropTypes.string,
+};
+
+Navbar.defaultProps = {
+  title: "Title Here",
+};
