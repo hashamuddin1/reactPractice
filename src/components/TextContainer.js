@@ -8,11 +8,17 @@ export default function TextContainer() {
   const handleOnSubmit = () => {
     setText(text.toUpperCase());
   };
-  const [text, setText] = useState("Enter Your Text");
+  const handleOnSubmitLower = () => {
+    setText(text.toLowerCase());
+  };
+  const clearText = () => {
+    setText("");
+  };
+  const [text, setText] = useState("");
   //text = "new text";//WRONG WAY TO CHANGE THE STATE
   return (
-    <div>
-      <div className="mb-3 mt-4 container">
+    <div className="container">
+      <div className="mb-3 mt-4">
         <label htmlFor="exampleFormControlTextarea1" className="form-label">
           Write a Paragraph
         </label>
@@ -30,7 +36,28 @@ export default function TextContainer() {
         >
           Covert to UpperCase
         </button>
+        <button
+          type="button"
+          onClick={handleOnSubmitLower}
+          className="btn btn-danger mt-3 ms-2"
+        >
+          Convert to LowerCase
+        </button>
+        <button
+          type="button"
+          onClick={clearText}
+          className="btn btn-warning mt-3 ms-2"
+        >
+          Clear Text
+        </button>
       </div>
+      <h2>Your Paragraph Summary</h2>
+      <p>
+        {text.split(" ").length} <b>words</b> and {text.length}{" "}
+        <b>characters</b>
+      </p>
+      <h2>Preview</h2>
+      <p>{text}</p>
     </div>
   );
 }
