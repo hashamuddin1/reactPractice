@@ -1,15 +1,17 @@
 import React, { useState } from "react";
 
-export default function TextContainer() {
+export default function TextContainer(props) {
   const handleOnChange = (event) => {
     setText(event.target.value);
   };
 
   const handleOnSubmit = () => {
     setText(text.toUpperCase());
+    props.showAlert("Convert Into Upper Case");
   };
   const handleOnSubmitLower = () => {
     setText(text.toLowerCase());
+    props.showAlert("Convert Into Lower Case");
   };
   const clearText = () => {
     setText("");
