@@ -17,7 +17,7 @@ function App() {
     if (mode === "light") {
       settextColor("light");
       setMode("dark");
-      document.body.style.backgroundColor = "#7a7a7a";
+      document.body.style.backgroundColor = "grey";
       showAlert("Dark Mode has been On");
     } else {
       settextColor("dark");
@@ -26,6 +26,7 @@ function App() {
       showAlert("Dark Mode has been Off");
     }
   };
+
   return (
     <>
       <Navbar
