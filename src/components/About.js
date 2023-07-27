@@ -109,7 +109,7 @@ export default function About() {
       <button
         type="button"
         onClick={changeMode}
-        className="btn btn-primary mt-3"
+        className="btn btn-primary mt-3 mb-3"
       >
         Change Mode
       </button>
