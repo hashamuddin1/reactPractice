@@ -40,13 +40,12 @@ function App() {
         />
         <Alert alert={alert} />
         <Routes>
-          <Route exact path="/about" element={<About />} />
-
           <Route
             exact
             path="/"
             element={<TextContainer showAlert={showAlert} />}
           />
+          <Route exact path="/about" element={<About />} />
         </Routes>
       </Router>
     </>

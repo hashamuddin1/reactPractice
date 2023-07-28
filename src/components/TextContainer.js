@@ -17,7 +17,6 @@ export default function TextContainer(props) {
     setText("");
   };
   const [text, setText] = useState("");
-  //text = "new text";//WRONG WAY TO CHANGE THE STATE
   return (
     <div className="container">
       <div className="mb-3 mt-4">
@@ -55,8 +54,12 @@ export default function TextContainer(props) {
       </div>
       <h2>Your Paragraph Summary</h2>
       <p>
-        {text.split(" ").length} <b>words</b> and {text.length}{" "}
-        <b>characters</b>
+        {
+          text.split(" ").filter((element) => {
+            return element.length !== 0;
+          }).length
+        }{" "}
+        <b>words</b> and {text.length} <b>characters</b>
       </p>
       <h2>Preview</h2>
       <p>{text}</p>
