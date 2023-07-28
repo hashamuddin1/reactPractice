@@ -1,7 +1,9 @@
 import Alert from "./components/Alert";
+import About from "./components/About";
 import Navbar from "./components/Navbar";
 import TextContainer from "./components/TextContainer";
 import React, { useState } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
   const [mode, setMode] = useState("light");
@@ -29,14 +31,24 @@ function App() {
 
   return (
     <>
-      <Navbar
-        title="Text Changer"
-        mode={mode}
-        changeMode={changeMode}
-        textColor={textColor}
-      />
-      <Alert alert={alert} />
-      <TextContainer showAlert={showAlert} />
+      <Router>
+        <Navbar
+          title="Text Changer"
+          mode={mode}
+          changeMode={changeMode}
+          textColor={textColor}
+        />
+        <Alert alert={alert} />
+        <Routes>
+          <Route exact path="/about" element={<About />} />
+
+          <Route
+            exact
+            path="/"
+            element={<TextContainer showAlert={showAlert} />}
+          />
+        </Routes>
+      </Router>
     </>
   );
 }
